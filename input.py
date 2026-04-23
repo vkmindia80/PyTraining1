@@ -23,10 +23,34 @@ print(sum)
 
 It can converted while inputting data
 Example 4:
-Typecast2.py'''
+Typecast2.py
 a = int(input("Enter first number: " ))
 b = int(input("Enter second number: " ))
 sum = a + b
 print ( "first no = ", a )
 print ( "second no=", b )
 print ( "sum = ", sum )
+
+# Accept student details
+rollno = 100
+name = "Vijay Marupudi"
+marks1 = 75
+marks2 = 73
+marks3 = 83
+total = (marks1 + marks2 + marks3)
+average = total / 3
+print ("Total = ", total)
+print ("Average = ", average)
+'''
+
+# Ex2: Complete the given program
+# To take inputs from the user
+x = input('Enter value of x: ')
+y = input('Enter value of y: ')
+print (x, y)
+# create a temporary variable and swap the values
+temp = x
+x = y
+y = temp
+print (x, y)
+
