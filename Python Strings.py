@@ -1,0 +1,360 @@
+'''Strings
+Strings in python are surrounded by either single quotation marks, or double
+quotation marks.
+'hello' is the same as "hello".
+You can display a string literal with the print() function:
+print("Hello")
+print('Hello')
+Assign String to a Variable
+Assigning a string to a variable is done with the variable name followed by an
+equal sign and the string:
+Example
+a = "Hello"
+print(a)
+Multiline Strings
+You can assign a multiline string to a variable by using three quotes:
+Example
+You can use three double quotes:
+
+a = """Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."""
+print(a)
+
+Or three single quotes:
+Note: in the result, the line breaks are inserted at the same position as in the code
+
+Strings are Arrays
+Like many other popular programming languages, strings in Python are
+arrays of bytes representing unicode characters.
+However, Python does not have a character data type, a single character is
+simply a string with a length of 1.
+Square brackets can be used to access elements of the string.
+Example
+Get the character at position 1 (remember that the first character has the
+position 0):
+
+a = "Hello, World!"
+print(a[0])
+
+Looping Through a String
+Since strings are arrays, we can loop through the characters in a string, with
+a for loop.
+Example
+Loop through the letters in the word "banana":
+
+for x in "banana":
+    print (x)
+
+String Length
+To get the length of a string, use the len() function.
+Example
+The len() function returns the length of a string:
+
+a = "Hello, World!"
+print(len(a))
+
+Check String
+To check if a certain phrase or character is present in a string, we can use
+the keyword in.
+Example
+Check if "free" is present in the following text:
+
+txt = "The best things in life are free!"
+print("free" in txt)
+
+Use it in an if statement:
+Example
+Print only if "free" is present:
+
+txt = "The best things in life are free!"
+if "free" in txt:
+    print("Yes, 'free' is present.")
+
+Check if NOT
+To check if a certain phrase or character is NOT present in a string, we can
+use the keyword not in.
+Example
+Check if "expensive" is NOT present in the following text:
+
+txt = "The best things in life are free!"
+print("expensive" not in txt)
+
+Use it in an if statement:
+Example2
+print only if "expensive" is NOT present:
+
+txt = "The best things in life are free!"
+if "expensive" not in txt:
+    print("No, 'expensive' is NOT present.")
+
+Slicing
+You can return a range of characters by using the slice syntax.
+Specify the start index and the end index, separated by a colon, to return a
+part of the string.
+Example
+Get the characters from position 2 to position 5 (not included):
+
+b = "Hello, World!"
+print(b[2:5])
+
+Slice From the Start
+By leaving out the start index, the range will start at the first character:
+Example
+Get the characters from the start to position 5 (not included):
+
+b = "Hello, World!"
+print(b[:10])
+
+Slice To the End
+By leaving out the end index, the range will go to the end:
+Example
+Get the characters from position 2, and all the way to the end:
+
+b = "Hello, World!"
+print(b[2:])
+
+Negative Indexing
+Use negative indexes to start the slice from the end of the string:
+Example
+Get the characters:
+From: "o" in "World!" (position -5)
+To, but not included: "d" in "World!" (position -2):
+
+b = "Hello, World!"
+print(b[-5:-2])
+
+Modify Strings
+Python has a set of built-in methods that you can use on strings.
+Upper Case
+Example
+The upper() method returns the string in upper case:
+
+a = "Hello, World!"
+print(a.upper())
+
+Lower Case
+Example
+The lower() method returns the string in lower case:
+
+a = "Hello, World!"
+print(a.lower())
+
+Remove Whitespace
+Whitespace is the space before and/or after the actual text, and very often
+you want to remove this space.
+Example
+The strip() method removes any whitespace from the beginning or the end:
+
+a = " Hello, World! "
+print(a)
+print(len(a))
+b= a.strip()
+print(b)
+print(len(b))
+
+# Removing default whitespace
+
+s1 = " Hello, World! "
+result1 = s1.strip()
+print(result1) # Output: Hello, World!
+
+# Removing specific characters
+
+s2 = "---Python---"
+result2 = s2.strip("-")
+print(result2) # Output: Python
+
+# Removing multiple specific characters
+
+s3 = "abcHelloabc"
+result3 = s3.strip("abc")
+print(result3) # Output: Hello
+
+Replace String
+Example
+The replace() method replaces a string with another string:
+
+a = "Hello, World!"
+print(a.replace("H", "J"))
+
+Split String
+The split() method returns a list where the text between the specified
+separator becomes the list items.
+ExampleThe split() method splits the string into substrings if it finds instances of
+the separator:
+
+a = "Hello, World!"
+print(a.split(","))
+
+String Concatenation
+To concatenate, or combine, two strings you can use the + operator.
+Example
+Merge variable a with variable b into variable c:
+
+a = "Hello"
+b = "World"
+c = a + b
+print(c) 
+
+Example
+To add a space between them, add a " ":
+
+a = "Hello"
+b = "World"
+c = a + " " + b
+print(c)
+
+String Format
+As we learned in the Python Variables chapter, we cannot combine strings
+and numbers like this:
+Example
+
+age = 36
+txt = "My name is John, I am " + age
+print(txt)
+
+But we can combine strings and numbers by using the format() method!
+The format() method takes the passed arguments, formats them, and places
+them in the string where the placeholders {} are:
+Example
+Use the format() method to insert numbers into strings:
+
+age = 36
+txt = "My name is John, and I am {}"
+print(txt.format(age))
+
+#My name is John, and I am 36
+The format() method takes unlimited number of arguments, and are placed
+into the respective placeholders:
+Example
+
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want {} pieces of item {} for {} dollars."
+print(myorder.format(quantity, itemno, price))
+
+# I want 3 pieces of item 567 for 49.95 dollars.
+You can use index numbers {0} to be sure the arguments are placed in the
+correct placeholders:
+Example
+
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
+print(myorder.format(quantity, itemno, price))
+
+# I want to pay 49.95 dollars for 3 pieces of item 567.
+Escape Character
+To insert characters that are illegal in a string, use an escape character.
+An escape character is a backslash \ followed by the character you want to
+insert.
+An example of an illegal character is a double quote inside a string that is
+surrounded by double quotes:
+Example
+You will get an error if you use double quotes inside a string that is
+surrounded by double quotes:
+
+txt = "We are the so-called "Vikings" from the north."
+
+To fix this problem, use the escape character "\\":
+Example
+The escape character allows you to use double quotes when you normally
+would not be allowed:
+
+
+txt = "We are the so-called \"Vikings\" from the north."
+print(txt)
+
+ Code Result
+ \' Single Quote
+ \\ Backslash
+ \n New Line
+ \r Carriage Return
+ \t Tab
+ \b Backspace
+ \f Form Feed
+ \ooo Octal value
+ \xhh Hex value
+Overview of Topics Slicing Strings
+ Modify Strings
+ Concatenate Strings
+ Format Strings
+ Escape Characters
+ String Methods
+Practice Programs:
+Strings.py
+#1. Creating Strings:
+single_quote_string = 'Hello, Python!'
+double_quote_string = "Hello, World!"
+multiline_string = """This is a
+multiline string
+using triple quotes."""
+#2. Accessing Characters (Indexing and Slicing):
+my_string = "Python"
+print(my_string[0]) # Output: P (first character)
+print(my_string[2:5]) # Output: tho (characters from index 2 up to but not
+including 5)
+print(my_string[-1]) # Output: n (last character)
+#3. String Concatenation(joining):
+str1 = "Hello"
+str2 = "World"
+combined_string = str1 + " " + str2
+print(combined_string) # Output: Hello World
+#4. String Methods (Examples):
+text = " Python Programming "
+# Case conversion
+print(text.upper()) # Output: PYTHON PROGRAMMING
+print(text.lower()) # Output: python programming
+print(text.capitalize()) # Output: python programming (only first char
+of entire string)
+print(text.title()) # Output: Python Programming (first char of
+each word)
+# Stripping whitespace
+print(text.strip()) # Output: Python Programming
+# Replacing substringsnew_text = text.replace("Programming", "Development")
+print(new_text) # Output: Python Development
+# Splitting and Joining
+words = text.strip().split(" ")
+print(words) # Output: ['Python', 'Programming']
+joined_text = "-".join(words)
+print(joined_text) # Output: Python-Programming
+#5. String Formatting:
+name = "Alice"
+age = 30
+print(f"My name is {name} and I am {age} years old.") # f-strings
+(formatted string literals)
+print("My name is {} and I am {} years old.".format(name, age)) #
+.format() method
+Strings2.py
+# escape double quotes
+example = "He said, \"What's there?\""
+# escape single quotes
+example = 'He said, "What\'s there?"'
+print(example)
+# Output: He said, "What's there?"
+#1. Compare Two Strings
+str1 = "Hello, world!"
+str2 = "I love Swift."
+str3 = "Hello, world!"
+# compare str1 and str2
+print(str1 == str2)
+# compare str1 and str3
+print(str1 == str3)
+Output
+False
+True
+In the above example,
+str1 and str2 are not equal. Hence, the result is False.
+str1 and str3 are equal. Hence, the result is True.Try a program to print Login Success or Invalid.
+Username = "admin."
+Password = "Hello, world!"
+# compare Username and Password
+if(Username == Password):
+print("Success")
+else:
+print("Invalid")
+'''
