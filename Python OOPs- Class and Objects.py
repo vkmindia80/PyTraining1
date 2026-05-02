@@ -191,7 +191,7 @@ print(Person.name)
 # Person.name is protected variable
 
 Example2
-'''
+
 class Student:
     marks = 0
     def compute_marks(cls, obtained_marks):
@@ -203,10 +203,11 @@ Student.print_marks(38)
 
 More Examples
 Access Class Attributes Using Objects
+
 class Parrot:
 # class attribute
-name = ""
-age = 0
+    name = ""
+    age = 0
 # create parrot1 object
 parrot1 = Parrot()
 parrot1.name = "Blu"
@@ -216,65 +217,111 @@ parrot2 = Parrot()
 parrot2.name = "Woo"
 parrot2.age = 15
 # access attributes
-print(f"{parrot1.name} is {parrot1.age} years old")
-print(f"{parrot2.name} is {parrot2.age} years old")
+print(f"{parrot1.name} parrot is {parrot1.age} years old")
+print(f"{parrot2.name} parrot is {parrot2.age} years old")
 Output:
 Blu is 10 years old
 Woo is 15 years old
 Example 2:
-# define a classclass Bike:
-name = ""
-gear = 0
+# define a class
+
+class Bike:
+    name = ""
+    gear = 0
 # create object of class
 bike1 = Bike()
 # access attributes and assign new values
 bike1.gear = 11
 bike1.name = "Mountain Bike"
 print(f"Name: {bike1.name}, Gears: {bike1.gear} ")
+
 Output:
 Name: Mountain Bike, Gears: 11
+
 Create Multiple Objects of Python Class
 We can also create multiple objects from a single class. For example,
 # define a class
+
 class Employee:
 # define a property
-employee_id = 0
+    employee_id = 0
+    employee_name =""
 # create two objects of the Employee class
 employee1 = Employee()
 employee2 = Employee()
 # access property using employee1
 employee1.employeeID = 1001
+employee1.employeeName = "Ken"
 print(f"Employee ID: {employee1.employeeID}")
+print(f"Employee Name: {employee1.employeeName}")
 # access properties using employee2
 employee2.employeeID = 1002
+employee1.employeeName = "Ray"
 print(f"Employee ID: {employee2.employeeID}")
+print(f"Employee Name: {employee1.employeeName}")
+
 Output:
 Employee ID: 1001
 Employee ID: 1002
 Using Python Methods
 # create a class
+
 class Room:
-length = 0.0
-breadth = 0.0
+    length = 0.0
+    breadth = 0.0
 # method to calculate area
-def calculate_area(self):
-print("Area of Room =", self.length * self.breadth)
-# create object of Room classstudy_room = Room()
+    def calculate_area(self):
+        print("Area of Room =", self.length * self.breadth)
+# create object of Room class
+study_room = Room()
 # assign values to all the properties
 study_room.length = 42.5
 study_room.breadth = 30.8
 # access method inside class
 study_room.calculate_area()
+
 Output
 Area of Room = 1309.0
 Python Constructors
+
 class Bike:
 # constructor function
-def __init__(self, name = ""):
-self.name = name
-print("Bike Name =", self.name)
+    def __init__(self, name = ""):
+        self.name = name
+        print("Bike Name =", self.name)
 bike1 = Bike()
-bike1 = Bike("Scoty")
+bike2 = Bike("Scooty")
+
 Output
 Bike Name = Scoty
+
+'''
+
+class Student:
+# constructor function
+    def __init__(self, student_name = "", student_roll_no = 0, student_age = 0, student_phone = ""):
+        self.name = student_name
+        self.rollno = student_roll_no
+        self.age = student_age
+        self.phone = student_phone
+        print("Student Name =", self.name)
+        print("Student Roll No =", self.rollno)        
+        print("Student Age =", self.age)        
+        print("Student Phone =", self.phone)
+    def __str__(self):
+        return f"{self.name},{self.age},{self.rollno},{self.phone}"
+'''        print("Student Name =", self.name)
+        print("Student Roll No =", self.rollno)        
+        print("Student Age =", self.age)        
+        print("Student Phone =", self.phone)
+'''
+Student1 = Student("John", 1001, 21, "3139131569")
+Student2 = Student("John1", 1002, 22, "3139131469")
+Student3 = Student("John2", 1003, 23, "3139131369")
+Student4 = Student("John3", 1004, 24, "3139131269")
+Student5 = Student("John4", 1005, 25, "3139131169")
+
+Students=[Student1,Student2,Student3,Student4,Student5]
+for student in Students:
+    print(student)
 
