@@ -41,7 +41,7 @@ total = (marks1 + marks2 + marks3)
 average = total / 3
 print ("Total = ", total)
 print ("Average = ", average)
-'''
+
 
 # Ex2: Complete the given program
 # To take inputs from the user
@@ -53,4 +53,44 @@ temp = x
 x = y
 y = temp
 print (x, y)
+'''
+import mymodule
+mymodule.greeting("Jonathan")
+a = mymodule.person1["age"]
+print(a)
+'''
+Example
+Import the module named mymodule, and access the person1 dictionary:
+import mymodule
+a = mymodule.person1["age"]
+print(a)
+o/p:
+36Naming a Module
+You can name the module file whatever you like, but it must have the file
+extension .py
+Re-naming a Module
+You can create an alias when you import a module, by using the as keyword:
+Example
+Create an alias for mymodule called mx:
+'''
+import mymodule as mx
+a = mx.person1["age"]
+print(a)
 
+import platform
+x = platform.system()
+print(x)
+
+import platform
+x = dir(platform)
+print(x)
+
+from mymodule import person1
+print (person1["age"])
+
+# import all names from the standard module math
+from math import *
+print("The value of pi is", pi)
+# import only pi from math module
+from math import pi
+print(pi)
