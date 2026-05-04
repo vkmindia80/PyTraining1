@@ -1,4 +1,5 @@
 # Polymorphism in Python OOPs
+'''
 The word "polymorphism" means "many forms", and in programming it refers to
 methods/functions/operators with the same name that can be executed on many
 objects or classes.
@@ -8,9 +9,11 @@ types.
 One such function is the len() function. It can run with many data types in Python.
 Let's look at some example use cases of the function.
 Example
+
 print(len("Hello World"))
 print(len(["Python", "Java", "C"]))
 print(len({"Name": "John", "Address": "Nepal"}))
+
 
 Class Polymorphism
 Polymorphism is often used in Class methods, where we can have multiple classes
@@ -20,34 +23,32 @@ method called move():
 
 Example
 Different classes with the same method:
+
 class Car:
-def __init__(self, brand, model):
-self.brand = brand
-self.model = model
-def move(self):
-print("Drive!")
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    def move(self):
+        print("Drive!")
 class Boat:
-def __init__(self, brand, model):
-self.brand = brandself.model = model
-def move(self):
-print("Sail!")
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    def move(self):
+        print("Sail!")
 class Plane:
-def __init__(self, brand, model):
-self.brand = brand
-self.model = model
-def move(self):
-print("Fly!")
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    def move(self):
+        print("Fly!")
 car1 = Car("Ford", "Mustang") #Create a Car object
 boat1 = Boat("Ibiza", "Touring 20") #Create a Boat object
 plane1 = Plane("Boeing", "747") #Create a Plane object
 for x in (car1, boat1, plane1):
-x.move()
+    x.move()
 
-o/p:
-Drive!
-Sail!
-Fly!
-Look at the for loop at the end. Because of polymorphism we can execute the
+    Look at the for loop at the end. Because of polymorphism we can execute the
 same method for all three classes.
 Polymorphism in Inheritance
 What about classes with child classes with the same name? Can we use
@@ -59,36 +60,29 @@ the Vehicle methods, but can override them:
 Example
 Create a class called Vehicle and make Car, Boat, Plane child classes
 of Vehicle:
+
 class Vehicle:
-def __init__(self, brand, model):
-self.brand = brand
-self.model = model
-def move(self):
-print("Move!")
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+    def move(self):
+        print("Move!")
 class Car(Vehicle):
-pass
+    pass
 class Boat(Vehicle):
-def move(self):
-print("Sail!")
-class Plane(Vehicle):def move(self):
-print("Fly!")
+    def move(self):
+        print("Sail!")
+class Plane(Vehicle):
+    def move(self):
+        print("Fly!")
 car1 = Car("Ford", "Mustang") #Create a Car object
 boat1 = Boat("Ibiza", "Touring 20") #Create a Boat object
 plane1 = Plane("Boeing", "747") #Create a Plane object
 for x in (car1, boat1, plane1):
-print(x.brand)
-print(x.model)
-x.move()
-o/p:
-Ford
-Mustang
-Move!
-Ibiza
-Touring 20
-Sail!
-Boeing
-747
-Fly!
+    print(x.brand)
+    print(x.model)
+    x.move()
+
 Child classes inherits the properties and methods from the parent class.
 In the example above you can see that the Car class is empty, but it
 inherits brand, model, and move() from Vehicle.
@@ -99,22 +93,18 @@ More Example to Practice
 Oops feature polymorphism implemented in different ways in Python
 1. Method overloading – occurs in functions, classes(class polymorphism).
 2. Method overriding – occurs in inheritance.1. Method Overloading in a class
+
 class example:
-def add(self, a, b):
-x = a+b
-return x
-def add(self, a, b, c):
-x = a+b+c
-return x
+    def add(self, a, b):
+        x = a+b
+        return x
+    def add(self, a, b, c):
+        x = a+b+c
+        return x
 obj = example()
 print (obj.add(10,20,30))
 print (obj.add(10,20))
-60
-Traceback (most recent call last):
-File "C:\Users\user\example.py", line 12, in <module>
-print (obj.add(10,20))
-^^^^^^^^^^^^^^
-TypeError: example.add() missing 1 required positional argument: 'c
+
 class example:
 def add(self, a = None, b = None, c = None):
 x=0
@@ -162,13 +152,7 @@ for animal in (cat1, dog1):
 animal.make_sound()
 animal.info()
 animal.make_sound()
-o/p:
-Meow
-I am a cat. My name is Kitty. I am 2.5 years old.
-Meow
-Bark
-I am a dog. My name is Fluffy. I am 4 years old.
-Bark
+
 2. Method Overriding in inheritance classes
 class Polygon:
 # method to render a shape
